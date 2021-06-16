@@ -6,14 +6,18 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:analyze": "cross-env ANALYZE=true next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint --no-error-on-unmatched-pattern --cache --fix --report-unused-disable-directives src/**/*.{js,ts,jsx,tsx}",
+    "ts:check": "tsc --noEmit",
+    "format": "prettier --write \"**/*.+(js|jsx|ts|tsx|json|css|scss|md)\""
   },
   "dependencies": {
     "@next/bundle-analyzer": "^11.0.0",
     "dotenv-load": "^2.0.0",
     "framer-motion": "^4.1.17",
     "next": "11.0.0",
+    "next-compose-plugins": "^2.2.1",
     "next-fonts": "^1.5.1",
     "next-images": "^1.8.1",
     "polished": "^4.1.3",
