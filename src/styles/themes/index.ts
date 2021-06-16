@@ -1,8 +1,24 @@
-import type { DefaultTheme } from 'styled-components'
+import lightTheme from './light'
+import darkTheme from './dark'
 
-import { default as dark } from './dark'
-import { default as light } from './light'
+interface ThemeOptionsProps {
+  light: DefaultTheme
+  dark: DefaultTheme
+}
+
+interface THEME_OPTIONSProps {
+  LIGHT: 'light'
+  DARK: 'dark'
+}
+
+export const ThemeOptions: ThemeOptionsProps = {
+  light: lightTheme,
+  dark: darkTheme,
+}
+
+export const THEME_OPTIONS: THEME_OPTIONSProps = {
+  LIGHT: 'light',
+  DARK: 'dark',
+}
 
 export const theme = <Props extends { theme: DefaultTheme }>(props: Props) => props.theme
-
-export { dark, light }
