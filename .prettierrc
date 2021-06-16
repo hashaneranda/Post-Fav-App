@@ -5,7 +5,5 @@
   "arrowParens": "avoid",
   "singleQuote": true,
   "printWidth": 120,
-  "tabWidth": 2,
-  "importOrder": ["^~/(.*)$", "^[./]"],
-  "importOrderSeparation": true
+  "tabWidth": 2
 }
