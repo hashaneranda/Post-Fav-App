@@ -15,7 +15,7 @@ export const LikesContainer = styled.div`
   min-width: 100%;
 
   .like_icon {
-    width: 35px;
+    width: 25px;
     filter: invert(52%) sepia(69%) saturate(3761%) hue-rotate(200deg) brightness(95%) contrast(103%);
   }
 

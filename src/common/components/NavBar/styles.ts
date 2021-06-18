@@ -28,6 +28,13 @@ export const Ul = styled.ul`
   display: flex;
   flex-direction: row;
   gap: 3em;
+
+  @media screen and (max-width: ${props => props.theme.breakpoints[0]}) {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
 `
 export const Li = styled.li`
   font-weight: bold;

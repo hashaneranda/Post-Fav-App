@@ -12,7 +12,7 @@ export interface InitialState {
 type ACTIONTYPE = { type: 'light'; payload: unknown } | { type: 'dark'; payload: unknown }
 
 const ThemeSwitcher = (props: { children: React.ReactNode | React.ReactNode[] }): JSX.Element => {
-  const [theme, setTheme] = usePeristedState<'light' | 'dark'>('post-fav-app-theme', THEME_OPTIONS.DARK)
+  const [theme, setTheme] = usePeristedState<'light' | 'dark'>('post-fav-app-theme', THEME_OPTIONS.LIGHT)
 
   const mapThemeData = (themeData: 'light' | 'dark') => {
     setTheme(themeData)
