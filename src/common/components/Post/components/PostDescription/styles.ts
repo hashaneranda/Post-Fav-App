@@ -14,6 +14,7 @@ export const TagsContainer = styled.div`
   gap: 0.8em;
 
   h5 {
+    color: ${props => props.theme.colors['blue'][500]};
     &:hover {
       cursor: pointer;
       opacity: 0.8;
