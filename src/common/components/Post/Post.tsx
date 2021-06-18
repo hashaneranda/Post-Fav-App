@@ -1,6 +1,10 @@
 import React from 'react'
 
 // components
+import PostHeader from './components/PostHeader/PostHeader'
+import PostImage from './components/PostImage/PostImage'
+import PostDescription from './components/PostDescription/PostDescription'
+import PostComments from './components/PostComments/PostComments'
 
 import { Card } from './styles'
 
@@ -9,9 +13,11 @@ interface PostProps {
 }
 
 const Post: React.FC<PostProps> = ({ post }) => (
-  <Card p={1}>
-    <h1>Post list</h1>
-    <p>{JSON.stringify(post)}</p>
+  <Card>
+    <PostHeader username={post.user?.username} userImage={post.user?.image} />
+    <PostImage images={post.images} name={post.name} price={post.price} handleLike={() => console.log('liked')} />
+    <PostDescription caption={post.caption} hashtags={post.hashtags} />
+    <PostComments comments={post.comments} />
   </Card>
 )
 

@@ -3,10 +3,12 @@ import { space } from 'styled-system'
 
 export const Section = styled.section`
   ${space}
-  padding: 1em 2em;
-  display: grid;
-  grid-gap: 1rem;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  padding: 1em 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+  min-width: 100%;
 `
 
 export const ul = styled.ul`

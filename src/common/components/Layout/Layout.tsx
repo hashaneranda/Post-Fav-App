@@ -18,11 +18,8 @@ const PageInner = styled(motion.div)`
   flex-direction: column;
   justify-content: center;
   transform-origin: left center;
-  max-width: 90vw;
+  max-width: 100vw;
   margin: 0 auto;
-  @media screen and (min-width: ${BREAKPOINTS.tablet}) {
-    min-width: 70vw;
-  }
 `
 
 const Layout: NextPage<Props> = ({ children, as = 'div', noDefaultTransition = false, ...rest }) =>
