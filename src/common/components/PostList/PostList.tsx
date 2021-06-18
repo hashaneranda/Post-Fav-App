@@ -10,7 +10,7 @@ interface PostListProps {
 }
 
 const PostList: React.FC<PostListProps> = ({ posts }) => (
-  <Section p={4}>
+  <Section>
     {posts.map((post: any, index: number) => (
       <Post key={index} post={post} />
     ))}

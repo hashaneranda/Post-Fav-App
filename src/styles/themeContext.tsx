@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useReducer, ReactNode } from 'react'
-import { InitialState } from './themeSwitcher'
+import type { InitialState } from './themeSwitcher'
 
 interface AppContextInterface extends InitialState {
   dispatch: any
