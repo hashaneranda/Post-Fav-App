@@ -8,10 +8,10 @@ import { Nav, Ul, Li } from './styles'
 const AppNav: React.FC = () => (
   <Nav p={4}>
     <Ul>
-      <Li marginRight={2}>
+      <Li>
         <AppLink href="/">Home</AppLink>
       </Li>
-      <Li marginRight={2}>
+      <Li>
         <AppLink href="/favorites">Favorites</AppLink>
       </Li>
     </Ul>

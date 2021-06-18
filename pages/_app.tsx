@@ -1,9 +1,6 @@
 import { AnimatePresence } from 'framer-motion'
 import App from 'next/app'
 
-// components
-import NavBar from '~/common/components/NavBar/NavBar'
-
 import Theme from '~/styles/theme'
 import ThemeSwitcher from '~/styles/themeSwitcher'
 
@@ -14,7 +11,6 @@ class MyApp extends App {
     return (
       <ThemeSwitcher>
         <Theme>
-          <NavBar />
           <AnimatePresence exitBeforeEnter initial={false}>
             <Component {...pageProps} key={router.route} />
           </AnimatePresence>

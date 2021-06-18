@@ -3,13 +3,23 @@ import type { NextPage } from 'next'
 import { createElement } from 'react'
 import styled from 'styled-components'
 
+// components
+import NavBar from '~/common/components/NavBar/NavBar'
+
 import { DefaultRouterPageVariants } from '~/common/utils/framer'
-import { BREAKPOINTS } from '~/styles/modules/variables'
 
 interface Props {
   readonly as?: string
   readonly noDefaultTransition?: boolean
 }
+
+const PageOuter = styled.div`
+  position: relative;
+  flex: 1;
+  display: flex;
+  max-width: 100vw;
+  height: 100%;
+`
 
 const PageInner = styled(motion.div)`
   flex: 1;
@@ -20,6 +30,11 @@ const PageInner = styled(motion.div)`
   transform-origin: left center;
   max-width: 100vw;
   margin: 0 auto;
+  margin-top: 5em;
+
+  @media screen and (max-width: ${props => props.theme.breakpoints[0]}) {
+    margin-top: 0;
+  }
 `
 
 const Layout: NextPage<Props> = ({ children, as = 'div', noDefaultTransition = false, ...rest }) =>
@@ -32,9 +47,12 @@ const Layout: NextPage<Props> = ({ children, as = 'div', noDefaultTransition = f
       animate: 'enter',
       className: 'router__wrapper',
     },
-    <PageInner {...rest} {...(noDefaultTransition ? {} : { variants: DefaultRouterPageVariants })}>
-      {children}
-    </PageInner>,
+    <PageOuter>
+      <NavBar />
+      <PageInner {...rest} {...(noDefaultTransition ? {} : { variants: DefaultRouterPageVariants })}>
+        {children}
+      </PageInner>
+    </PageOuter>,
   )
 
 export default Layout
