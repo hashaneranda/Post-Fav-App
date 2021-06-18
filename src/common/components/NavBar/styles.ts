@@ -1,8 +1,7 @@
 import styled from 'styled-components'
-import { space } from 'styled-system'
 
 export const Nav = styled.nav`
-  ${space}
+  padding: 2em;
   display: flex;
   flex-direction: row;
   justify-content: center;

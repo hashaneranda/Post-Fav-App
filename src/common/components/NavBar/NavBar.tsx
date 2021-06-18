@@ -8,7 +8,7 @@ import LikeIcon from '~/common/components/Icons/LikeIcon'
 import { Nav, Ul, Li } from './styles'
 
 const AppNav: React.FC = () => (
-  <Nav p={4}>
+  <Nav>
     <Ul>
       <Li>
         <AppLink href="/" title="Home" icon={<HomeIcon className="nav_icon" />} />

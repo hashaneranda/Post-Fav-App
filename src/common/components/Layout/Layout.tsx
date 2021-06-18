@@ -34,6 +34,7 @@ const PageInner = styled(motion.div)`
 
   @media screen and (max-width: ${props => props.theme.breakpoints[0]}) {
     margin-top: 0;
+    margin-bottom: 5em;
   }
 `
 
