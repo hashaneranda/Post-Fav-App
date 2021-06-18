@@ -72,6 +72,9 @@ module.exports = withPlugins([[withBundleAnalyzer], withFonts, withImages], {
     // Make sure entries are not getting disposed.
     maxInactiveAge: 1000 * 60 * 60,
   },
+  images: {
+    disableStaticImages: true,
+  },
   async headers() {
     return [
       {

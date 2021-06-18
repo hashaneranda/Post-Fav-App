@@ -44,7 +44,7 @@ const posts = [
       name: 'Jhon Doe',
       image: 'https://i.ibb.co/p3n8jKV/88129994-218553312873090-187843388282765312-n.jpg',
     },
-    user_has_liked: true,
+    user_has_liked: false,
   },
   {
     hashtags: ['#photo', '#react', '#nextjs'],

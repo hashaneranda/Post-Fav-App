@@ -48,11 +48,11 @@ background-color: #909090;
   body {
     ${MAIN_BACKGROUND};
     color: ${props => theme(props).colors.text};
-    font-family: "Poppins";
+    font-family: ${props => theme(props).fonts.body};
   }
 
   h1,h2,h3,h4,h5, h6 {
-    font-family: "PoppinsBold";
+    font-family: ${props => theme(props).fonts.heading};
   }
 
 `
