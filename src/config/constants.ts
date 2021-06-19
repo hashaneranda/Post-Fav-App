@@ -1,1 +1,1 @@
-export const API_SERVER_BASE = process.env.API_SERVER_BASE || 'http://localhost:5000'
+export const API_SERVER_BASE = process.env.REACT_APP_API_SERVER_BASE || 'https://post-fav-backend.herokuapp.com'
