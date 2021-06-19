@@ -7,6 +7,9 @@ import PostList from '~/common/components/PostList/PostList'
 import Layout from '~/common/components/Layout/Layout'
 import EmptyImage from '~/common/components/Icons/EmptyImage'
 
+// config
+import { API_SERVER_BASE } from '~/config/constants'
+
 export const Container = styled.div`
   display: grid;
   place-items: center;
@@ -27,9 +30,8 @@ interface FavoritesProps {
 const Favorites: NextPage<FavoritesProps> = ({ posts }) => (
   <Layout>
     <AppHead title="Favorites" />
-    <h1>Favorites</h1>
     {!!posts && posts.length > 0 ? (
-      <PostList posts={posts} />
+      <PostList posts={posts} postName="post" title="Favorites" isFavoriteList={true} />
     ) : (
       <Container>
         <Wrapper>
@@ -42,7 +44,7 @@ const Favorites: NextPage<FavoritesProps> = ({ posts }) => (
 )
 
 export async function getStaticProps() {
-  const res = await fetch(`${process.env.API_SERVER_BASE}/v1/post/fav`)
+  const res = await fetch(`${API_SERVER_BASE}/v1/post/fav`)
   const posts = await res.json()
 
   return {

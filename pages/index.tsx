@@ -5,6 +5,9 @@ import AppHead from '~/common/components/AppHead/AppHead'
 import PostList from '~/common/components/PostList/PostList'
 import Layout from '~/common/components/Layout/Layout'
 
+// config
+import { API_SERVER_BASE } from '~/config/constants'
+
 // const posts = [
 //   {
 //     hashtags: ['#photo', '#react', '#nextjs'],
@@ -80,7 +83,7 @@ const Index: NextPage<IndexProps> = ({ posts }) => (
 )
 
 export async function getStaticProps() {
-  const res = await fetch(`${process.env.API_SERVER_BASE}/v1/post`)
+  const res = await fetch(`${API_SERVER_BASE}/v1/post`)
   const posts = await res.json()
 
   return {
