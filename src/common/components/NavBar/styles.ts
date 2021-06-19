@@ -20,6 +20,7 @@ export const Nav = styled.nav`
     top: unset;
     z-index: 2;
     width: 100%;
+    padding: 1.2em;
   }
 `
 
