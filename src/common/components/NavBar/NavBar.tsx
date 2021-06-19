@@ -31,7 +31,7 @@ const AppNav: React.FC = () => {
           <AppLink href="/favorites" title="Favorites" icon={<LikeIcon className="nav_icon" />} />
         </Li>
         <Li className="theme_switcher">
-          <h4 onClick={() => toggleTheme()}>Switch Theme</h4>
+          <h4 onClick={() => toggleTheme()}>{selectedTheme === THEME_OPTIONS.DARK ? ' Light' : 'Dark'} Mode</h4>
         </Li>
       </Ul>
     </Nav>
