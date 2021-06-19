@@ -5,6 +5,7 @@ import baseTheme from '~/styles/themes/base'
 
 const theme: DefaultTheme = {
   ...baseTheme,
+  title: 'dark',
   colors: {
     ...baseTheme.colors,
     background: colors.gray[900],

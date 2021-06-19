@@ -6,7 +6,9 @@ export const Nav = styled.nav`
   flex-direction: row;
   justify-content: center;
   background: ${props => props.theme.colors.background};
-  border-bottom: 1px solid #dbdbdb;
+  border-bottom: 1px solid ${props => props.theme.colors.gray[300]};
+
+  ${({ theme }) => theme.title === 'dark' && `border-bottom: 1px solid ${theme.colors.gray[700]};`}
 
   position: fixed;
   top: 0;
@@ -38,4 +40,16 @@ export const Ul = styled.ul`
 `
 export const Li = styled.li`
   font-weight: bold;
+  h4 {
+    &:hover {
+      cursor: pointer;
+      opacity: 0.8;
+    }
+  }
+
+  @media screen and (max-width: ${props => props.theme.breakpoints[0]}) {
+    &.theme_switcher {
+      display: none;
+    }
+  }
 `

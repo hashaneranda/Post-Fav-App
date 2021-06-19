@@ -23,4 +23,4 @@ export const THEME_OPTIONS: THEME_OPTIONSProps = {
   DARK: 'dark',
 }
 
-export const theme = <Props extends { theme: DefaultTheme }>(props: Props) => props.theme
+// export const theme = <Props extends { theme: DefaultTheme }>(props: Props) => props.theme

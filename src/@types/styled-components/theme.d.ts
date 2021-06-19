@@ -21,6 +21,7 @@ declare module 'styled-components' {
   }
 
   export interface DefaultTheme extends Typography {
+    title: string
     breakpoints: string[]
     space: readonly [number, ...string]
     sizes: readonly [number, ...string]

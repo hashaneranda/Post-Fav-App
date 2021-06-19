@@ -9,7 +9,14 @@ export const Card = styled.div`
   overflow: hidden;
   position: relative;
 
-  border: 1px solid #dbdbdb;
+  border: 1px solid ${props => props.theme.colors.gray[300]};
+
+  ${({ theme }) =>
+    theme.title === 'dark' &&
+    `border: 1px solid ${theme.colors.gray[700]};
+     background: ${theme.colors.gray[800]};
+  `}
+
   border-radius: 3px;
 `
 

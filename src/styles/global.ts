@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components'
 
 import bootstrap from '~/styles/bootstrap'
 import { MAIN_BACKGROUND } from '~/styles/modules/variables'
-import { theme } from '~/styles/themes'
+// import { theme } from '~/styles/themes'
 
 export default createGlobalStyle`
   ${bootstrap};
@@ -47,12 +47,12 @@ background-color: #909090;
 
   body {
     ${MAIN_BACKGROUND};
-    color: ${props => theme(props).colors.text};
-    font-family: ${props => theme(props).fonts.body};
+    color: ${props => props.theme.colors.text};
+    font-family: ${props => props.theme.fonts.body}; 
   }
 
   h1,h2,h3,h4,h5, h6 {
-    font-family: ${props => theme(props).fonts.heading};
+    font-family:${props => props.theme.fonts.heading};
   }
 
 `
