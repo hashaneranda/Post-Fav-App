@@ -1,4 +1,6 @@
+import { useEffect } from 'react'
 import type { NextPage } from 'next'
+import { useRouter } from 'next/router'
 import styled from 'styled-components'
 
 // components
@@ -27,21 +29,33 @@ interface FavoritesProps {
   posts: any[]
 }
 
-const Favorites: NextPage<FavoritesProps> = ({ posts }) => (
-  <Layout>
-    <AppHead title="Favorites" />
-    {!!posts && posts.length > 0 ? (
-      <PostList posts={posts} postName="post" title="Favorites" isFavoriteList={true} />
-    ) : (
-      <Container>
-        <Wrapper>
-          <EmptyImage />
-          <h3>No favorites added!</h3>
-        </Wrapper>
-      </Container>
-    )}
-  </Layout>
-)
+const Favorites: NextPage<FavoritesProps> = ({ posts }) => {
+  const router = useRouter()
+
+  const refreshData = () => {
+    router.replace(router.asPath)
+  }
+
+  useEffect(() => {
+    refreshData()
+  }, [])
+
+  return (
+    <Layout>
+      <AppHead title="Favorites" />
+      {!!posts && posts.length > 0 ? (
+        <PostList posts={posts} postName="post" title="Favorites" isFavoriteList={true} />
+      ) : (
+        <Container>
+          <Wrapper>
+            <EmptyImage />
+            <h3>No favorites added!</h3>
+          </Wrapper>
+        </Container>
+      )}
+    </Layout>
+  )
+}
 
 export async function getStaticProps() {
   const res = await fetch(`${API_SERVER_BASE}/v1/post/fav`)

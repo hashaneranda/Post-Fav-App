@@ -21,7 +21,7 @@ const Post: React.FC<PostProps> = ({ post, isFavoriteList }) => {
 
   const applyLike = async () => {
     const objectWithData = {
-      post: post.id,
+      post: post._id,
     }
 
     if (isFavoriteList) setData(null)
