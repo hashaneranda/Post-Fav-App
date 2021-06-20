@@ -33,7 +33,7 @@ const Index: NextPage<IndexProps> = ({ posts }) => {
   )
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const res = await fetch(`${API_SERVER_BASE}/v1/post`)
   const posts = await res.json()
 

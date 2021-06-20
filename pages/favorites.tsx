@@ -57,7 +57,7 @@ const Favorites: NextPage<FavoritesProps> = ({ posts }) => {
   )
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const res = await fetch(`${API_SERVER_BASE}/v1/post/fav`)
   const posts = await res.json()
 
